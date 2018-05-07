@@ -1,3 +1,6 @@
+/* instead of accessing the result array in each iteration we can do the summation in a variable called sum
+ * and just accessing the result array in the end.
+ */
 #include <iostream>
 #include <sys/time.h>
 #include <cstdlib>
