@@ -48,8 +48,8 @@ void mat_mult(int n, double a[], double b[], double c[]) {
   double sum = 0;
 #pragma omp parallel for
   for(int i=0; i<n; i++) {
-    for(int j=0; j<n; j++) {
-      for(int k=0; k<n; k++) {
+    for(int k=0; k<n; k++) {
+      for(int j=0; j<n; j++) {
         // dont use a sum variable an array is better because each cell can be accessed in parallel
         c[i*n + j] += a[i*n + k]*b[k*n + j];
       }
