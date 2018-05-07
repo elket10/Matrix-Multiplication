@@ -1,3 +1,4 @@
+// Naive mat multiplication
 #include <iostream>
 #include <sys/time.h>
 #include <cstdlib>
