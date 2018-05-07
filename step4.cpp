@@ -1,3 +1,4 @@
+/* used pragma parallel. Note: dont use a sum variable array is better because each cell can be accessed in parallel
 #include <iostream>
 #include <sys/time.h>
 #include <cstdlib>
