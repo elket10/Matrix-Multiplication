@@ -1,5 +1,7 @@
 #include <iostream>
 #include <sys/time.h>
+#include <cstdlib>
+
 double get_time() {
   struct timeval tv;
   gettimeofday(&tv, NULL);
