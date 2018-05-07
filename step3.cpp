@@ -1,3 +1,4 @@
+// In the mat mult function swapped the k with j for better memory access
 #include <iostream>
 #include <sys/time.h>
 #include <cstdlib>
