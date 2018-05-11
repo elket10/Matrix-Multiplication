@@ -56,11 +56,18 @@ void mat_mult(int n, double a[], double b[], double c[]) {
 
 int main(int argc, char **argv) {
   int n = atoi(argv[1]);
-  double a[n*n], b[n*n], c[n*n];
+  double *a = new double[n*n]();
+  double *b = new double[n*n]();
+  double *c = new double[n*n]();
+  
   fill_arrays(n,a,b);
   double tic = get_time();
   mat_mult(n,a,b,c);
   double toc = get_time();
   std::cout<<"N="<<n<<": "<<toc-tic<<"s ("<<2.*n*n*n/(toc-tic)/1e9<<"GFlops)"<<std::endl;
   //print_arrays(n,a,b,c);
+
+  delete[] a;
+  delete[] b;
+  delete[] c;
 }
