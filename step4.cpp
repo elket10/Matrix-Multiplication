@@ -48,8 +48,8 @@ void mat_mult(int n, double a[], double b[], double c[]) {
   double sum = 0;
 #pragma omp parallel for
   for(int i=0; i<n; i++) {
-    for(int j=0; j<n; j++) {
-      for(int k=0; k<n; k++) {
+    for(int k=0; k<n; k++) {
+      for(int j=0; j<n; j++) {
         // dont use a sum variable an array is better because each cell can be accessed in parallel
         c[i*n + j] += a[i*n + k]*b[k*n + j];
       }
@@ -66,5 +66,5 @@ int main(int argc, char **argv) {
   mat_mult(n,a,b,c);
   double toc = get_time();
   std::cout<<"N="<<n<<": "<<toc-tic<<"s ("<<2.*n*n*n/(toc-tic)/1e9<<"GFlops)"<<std::endl;
-  //print_arrays(n,a,b,c);
+  print_arrays(n,a,b,c);
 }
